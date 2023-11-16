@@ -3,11 +3,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 from .models import Author, Quote, Tag
 
-# fullname = models.CharField(max_length=120)
-# born_date = models.CharField(max_length=50)
-# born_location = models.CharField(max_length=120)
-# description = models.TextField()
-# created_at = models.DateTimeField(auto_now_add=True)
 
 
 class AuthorForm(forms.ModelForm):
@@ -51,9 +46,6 @@ class TagForm(forms.ModelForm):
         model = Tag
         fields = ["name"]
 
-    # quote =  models.TextField()
-    # tags = models.ManyToManyField(Tag)
-    # author = models.ForeignKey(Author, on_delete=models.CASCADE, default=None, null=True)
 
 
 class QuoteForm(forms.ModelForm):
@@ -64,7 +56,6 @@ class QuoteForm(forms.ModelForm):
         ),
     )
     author = forms.IntegerField(widget=forms.Select())
-    # tags = forms.MultiValueField(widget=forms.SelectMultiple(fields=))
 
     class Meta:
         model = Quote
